@@ -1,0 +1,24 @@
+.contactList {
+    column-count: 2;
+    column-gap: 20px;
+    min-width: 245px;
+    margin: 0 auto;
+    padding: 15px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__element {
+    text-align: left;
+    font-style: unset;
+    border-top: 1px solid #c07777;
+    
+    font-weight: bold;
+    background: #fcc17d;
+}
+
+
+.element__letter {
+    padding: 5px 0 5px 5px;
+}

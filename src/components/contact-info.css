@@ -1,0 +1,35 @@
+.input-container {
+    display: flex;
+}
+.contact-field {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    min-height: 30px;
+    min-width: 200px;
+    margin: 5px 0 0 5px;
+}
+
+input:invalid {
+    border-color: #900;
+    background-color: #fdd;
+}
+  
+input:focus:invalid {
+    outline: none;
+}
+
+input:hover {
+    border: 2px solid #ffd4d4;
+}
+
+.error {
+    width: 208px;
+    margin: 0 0 0 5px;
+    font-size: 85%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+}
