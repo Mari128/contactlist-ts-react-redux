@@ -1,17 +1,14 @@
 import {IContact} from "../models/IContact";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {getContacts} from "../../ContactList/contact";
+import {IContactList} from "../models/IContactList";
+import {addContact, deleteContact, getContactList} from "../../ContactList/contactList";
 
-interface ContactState {
-    contacts: IContact[];
-    letter: string;
-    count: number;
+interface ContactListState {
+    contactList: IContactList[];
 }
 
-const initialState: ContactState = {
-    contacts: [],
-    letter: '',
-    count: 0,
+const initialState: ContactListState = {
+    contactList: [],
 }
 
 export const contactSlice = createSlice({
@@ -19,15 +16,28 @@ export const contactSlice = createSlice({
     initialState,
     reducers: {
         addContact(state, action: PayloadAction<IContact>) {
-            state.letter = action.payload.name.charAt(0).toLowerCase();
-            state.contacts = getContacts(state.letter);
-            state.contacts.push(action.payload);
-            localStorage.setItem(state.letter, JSON.stringify(state.contacts));
+            let currentContactList = addContact(getContactList(), action.payload)
+            state.contactList = currentContactList;
+            localStorage.setItem("contacts", JSON.stringify(currentContactList));
         },
-        getContact(state, action: PayloadAction<string>) {
-            state.contacts = getContacts(action.payload);
-            state.count = state.contacts.length;
-        }
+        initContactList(state, action: PayloadAction<string | null>) {
+            state.contactList = action.payload !== null ? JSON.parse(action.payload) : [];
+        },
+        deleteContact(state, action: PayloadAction<IContact>) {
+            let currentContactList = deleteContact(getContactList(), action.payload)
+            state.contactList = currentContactList
+            localStorage.setItem("contacts", JSON.stringify(currentContactList));
+        },
+        editContactList(state, action: PayloadAction<[IContact, IContact]>) {
+            let currentContactList = deleteContact(getContactList(), action.payload[0]);
+            currentContactList = addContact(currentContactList, action.payload[1]);
+            state.contactList = currentContactList;
+            localStorage.setItem("contacts", JSON.stringify(currentContactList));
+        },
+        clearContactList(state, action: PayloadAction<IContactList[]>) {
+            state.contactList = action.payload;
+            localStorage.setItem("contacts", JSON.stringify(action.payload));
+        },
     }
 })
 

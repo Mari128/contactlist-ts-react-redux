@@ -1,0 +1,129 @@
+.search-container__item{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.search-input {
+    font-size: 18px;
+    margin: 20px 0;
+    width: 86%;
+    height: 30px;
+    padding: 5px 10px 0 10px;
+    border: 2px solid #aaaaaa;
+    transition: .3s;
+}
+
+.search-input:hover {
+    border: 2px solid #ffd4d4;
+}
+
+.search-input:focus {
+    border: 2px solid #fcaaaa;
+    background: #fff;
+}
+
+.search-output {
+    background: #fff;
+    height: 70%;
+    width: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.search-close {
+    position: absolute;
+    top: 2%;
+    left: 95%;
+    transition: .2s;
+}
+
+.search-close:hover {
+    color: #FF0000;
+}
+
+.search-show-all {
+    height: 30px;
+    width: 100px;
+    background: #fff;
+    padding: 0;
+    border: 2px solid #c07777;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .5s;
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.search-show-all:hover {
+    background: #c07777;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.contact_icons {
+    margin-left: auto;
+}
+.contact__edit {
+    margin-left: auto;
+    padding: 27px 10px 0 0;
+}
+.contact__edit:hover {
+    color: #FF0000; }
+
+.edit-contact-container__item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.error {
+    text-align: center;
+}
+
+.edit-close {
+    position: absolute;
+    top: 3%;
+    left: 91%;
+    transition: .2s;
+}
+
+.edit-close:hover {
+    color: #FF0000;
+}
+
+.edit-save {
+    height: 30px;
+    width: 100px;
+    background: #fff;
+    padding: 0;
+    border: 2px solid #c07777;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.edit-save:hover {
+    background: #c07777;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.edit__contact-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

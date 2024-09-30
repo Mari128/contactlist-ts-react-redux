@@ -1,24 +1,61 @@
 .contactList {
-    column-count: 2;
-    column-gap: 20px;
+    display: flex;
+    flex-direction: row;
     min-width: 245px;
     margin: 0 auto;
     padding: 15px;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .contact__element {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     font-style: unset;
     border-top: 1px solid #c07777;
-    
+    box-sizing: border-box;
     font-weight: bold;
     background: #fcc17d;
+    width: 245px;
 }
-
 
 .element__letter {
-    padding: 5px 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0 5px 10px;
 }
+
+.letter__counter {
+    margin-left: auto;
+    padding: 0 10px 0 0;
+}
+
+.letter__delete {
+    display: none;
+}
+
+.letter__info {
+    display: none;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: start;
+    background: #f8deb8;
+    border-top: 1px solid #b8b8b8;
+    border-bottom: 1px solid #b8b8b8;
+    padding: 0 0 0 10px;
+}
+
+.letter__info_active {
+    display: flex;
+}
+
+.contact__delete {
+    margin-left: auto;
+    padding: 27px 10px 0 0;
+}
+.contact__delete:hover {
+    color: #FF0000; }
